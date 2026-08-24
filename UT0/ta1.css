@@ -1,0 +1,17 @@
+.titulo {
+    background-color: red;
+    text-align: center;
+    color: azure;
+    font-size: 32px;
+}
+
+p{
+    background-color: darkseagreen;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+button{
+    background-color: darkorange;
+    font-size: 18px;
+}

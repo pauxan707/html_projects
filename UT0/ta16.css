@@ -1,0 +1,42 @@
+/* Estilo base = pantallas grandes (1440px y más) */
+body {
+    background-color: red;
+}
+
+p {
+    font-size: 24px;
+}
+
+img {
+    width: 50%;
+}
+
+/* Pantallas medianas: 768px o menos */
+@media (max-width: 768px) {
+    body {
+        background-color: green;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    img {
+        width: 70%;
+    }
+}
+
+/* Pantallas pequeñas: 425px o menos */
+@media (max-width: 425px) {
+    body {
+        background-color: blue;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
