@@ -1,0 +1,100 @@
+body {
+    background-color: cornsilk;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*compu*/
+    gap: 40px;
+    margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+    .contenedor{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .contenedor{
+        grid-template-columns: 1fr;
+    }
+}
+
+.tarjeta{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: beige;
+    align-items: center;
+    border-radius: 12px;
+    padding: 16px;
+    border: 2px solid red; /*otra manera*/
+    border-style: solid;
+    border-color: black;
+
+}
+.encabezado{
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto auto; 
+    gap: 4px 15px;
+    align-items: center;
+}
+
+.emoji {
+    grid-column: 1;
+    grid-row: 1 / 3; 
+    font-size: 30px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 12px;
+}
+
+.modelo {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: large;
+    font-weight: bold;
+}
+.coso{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.botones1{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    padding: 1px;
+}
+.botones{
+    justify-content: space-evenly;
+    border-color: black;
+    border-radius:10px;
+    border-style: solid;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 15px;
+    width: 100%;
+
+
+}
+
+.claude{
+    border-color: yellow;
+}

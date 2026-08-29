@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Contenedor central simula hoja A4 */
+.cv-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 800px;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.subtitle {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: #666;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-top: 5px;
+  color: #000;
+}
+
+/* Separadores */
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 25px 0;
+}
+
+/* Títulos principales */
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+/* Layout 2 columnas (Perfil y Contacto) */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contacto-list {
+  list-style: none;
+}
+
+.contacto-list li {
+  margin-bottom: 10px;
+}
+
+/* Estilos de Educación y Trabajos */
+.item {
+  margin-bottom: 20px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.item-header h3 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.fecha {
+  font-size: 13px;
+  color: #888;
+}
+
+.subtexto {
+  font-size: 14px;
+  color: #666;
+  margin-top: 3px;
+}
+
+/* Listas con viñetas */
+ul {
+  margin-left: 18px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Tarjetas de Tecnologías */
+.tecnologias-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.tech-card {
+  width: 75px;
+  height: 75px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.tech-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

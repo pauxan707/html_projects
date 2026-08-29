@@ -1,0 +1,81 @@
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  align-items: center;
+  padding: 20px;
+}
+
+.titulo{
+  display: flex;
+  justify-content: center;
+}
+
+.ctarjeta
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin: 30px 0;
+  padding: 5px;
+  margin: 5px;
+  max-width: 800px;     /* EVITA QUE SE AGRANDEN DEMASIADO */
+  width: 100%;
+}
+
+.tarjeta{
+  display: flex;
+  flex-direction:column;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  padding: 15px 18px;
+
+  
+}
+
+.t{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.c{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.emoji{
+  font-size: 60px;
+  
+}
+.texto{
+  display: flex;
+  text-align: right;
+  font-size:20px;
+}
+
+@media (max-width: 768px) {
+    .ctarjeta{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .ctarjeta{
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 15px;
+    width: 100%;
+
+
+}
