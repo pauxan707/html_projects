@@ -21,7 +21,22 @@ Si un elemento no tiene alguna de las propiedades requeridas, se debe arrojar un
 error.
 */
 
+import americas from "./americas.json" with { type: "json" };
 export function countriesForCurrency(data, currency) {
-  //TODO Sustituir este código por la implementación correcta.
-  throw new Error("La función countriesForCurrency no está implementada");
+  if (data===undefined || data=== null){
+        throw new Error();
+    }
+
+    if (currency===undefined || currency=== null){
+        return [];
+    }
+
+    if (!Array.isArray(data)){
+        throw new Error();
+    }
+
+  return data.filter(america=> currency in america.currencies).map(america=> america.cca2)
 }
+
+countriesForCurrency(americas, "EUR");
+

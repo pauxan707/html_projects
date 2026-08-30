@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probando TA 7 - getTheTitles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-width: 450px;
+            width: 100%;
+        }
+        h2 {
+            color: #1a73e8;
+            margin-top: 0;
+            border-bottom: 2px solid #e8eaed;
+            padding-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #5f6368;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .resultado-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f0fe;
+            border-left: 5px solid #1a73e8;
+            border-radius: 6px;
+            display: none;
+        }
+        .resultado-box h3 {
+            margin-top: 0;
+            color: #1967d2;
+            font-size: 16px;
+        }
+        .tags-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .tag {
+            background-color: #1a73e8;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>📚 Lista de Libros (books)</h2>
+        <p>Esta es la estructura original de objetos en JavaScript:</p>
+        <ul id="lista-libros">
+            <!-- Cargado dinámicamente con JS -->
+        </ul>
+
+        <!-- Al hacer clic, se ejecuta la función que conecta todo -->
+        <button onclick="ejecutarPrueba()">🏆 Ejecutar getTheTitles()</button>
+
+        <div id="resultado-box" class="resultado-box">
+            <h3>Resultado retornado (Array de títulos):</h3>
+            <div id="resultado-tags" class="tags-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // 1. El Array original de objetos que nos da la TA 7 [2]
+        const books = [
+            { title: 'El Principito', author: 'Antoine de Saint-Exupéry' },
+            { title: 'Cien años de soledad', author: 'Gabriel García Márquez' },
+            { title: '1984', author: 'George Orwell' }
+        ];
+
+        // Pintamos los libros en la lista al abrir la pantalla
+        const listaHTML = document.getElementById("lista-libros");
+        books.forEach(book => {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>"${book.title}"</strong> escrito por <em>${book.author}</em>`;
+            listaHTML.appendChild(li);
+        });
+
+        // =========================================================
+        // 2. TU FUNCIÓN CORREGIDA (Esta es la que va en tu examen)
+        // =========================================================
+        function getTheTitles(books) {
+            // .map() recorre la lista y se queda solo con el .title de cada objeto [1, 2]
+            return books.map(book => book.title);
+        }
+
+        // 3. Función del botón para conectar el HTML con tu JS
+        function ejecutarPrueba() {
+            // Llamamos a tu función pasándole los datos de prueba
+            const titulosObtenidos = getTheTitles(books);
+
+            // Seleccionamos los contenedores de la UI
+            const resultadoBox = document.getElementById("resultado-box");
+            const tagsContainer = document.getElementById("resultado-tags");
+
+            // Limpiamos resultados anteriores
+            tagsContainer.innerHTML = "";
+
+            // Recorremos el nuevo array de títulos y creamos "tags" visuales en el HTML
+            titulosObtenidos.forEach(titulo => {
+                const tag = document.createElement("span");
+                tag.className = "tag";
+                tag.textContent = titulo;
+                tagsContainer.appendChild(tag);
+            });
+
+            // Mostramos la caja de resultados
+            resultadoBox.style.display = "block";
+
+            // Imprimimos también en la consola del navegador para que te acostumbres a verla
+            console.log("Resultado de getTheTitles(books):", titulosObtenidos);
+        }
+    </script>
+</body>
+</html>
